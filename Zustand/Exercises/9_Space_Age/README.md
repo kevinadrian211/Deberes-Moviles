@@ -1,30 +1,14 @@
-# React + TypeScript + Vite
+AgeCalculator calcula la edad de una persona en años según la cantidad de segundos ingresados y el planeta seleccionado. Aquí tienes una descripción de cómo funciona:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+useState: Se utilizan los hooks de estado useState para manejar el estado de tres variables: seconds, planet, y age. seconds almacena la cantidad de segundos ingresados por el usuario, planet almacena el planeta seleccionado, y age almacena la edad calculada.
 
-Currently, two official plugins are available:
+RATIOS: Es un objeto que almacena los factores de conversión de la edad de una persona en la Tierra a la edad en otros planetas del sistema solar. Cada clave del objeto corresponde al nombre de un planeta, y el valor asociado es el factor de conversión.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+calculateAge: Esta función se activa cuando se hace clic en el botón "Calculate Age". Utiliza el factor de conversión del planeta seleccionado para calcular la edad en años, a partir de la cantidad de segundos ingresados. Luego actualiza el estado age con el valor calculado.
 
-## Expanding the ESLint configuration
+handleSecondsChange: Se activa cada vez que el usuario cambia el valor del input de segundos. Actualiza el estado seconds con el nuevo valor ingresado.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+handlePlanetChange: Se activa cada vez que el usuario selecciona un planeta diferente en el dropdown. Actualiza el estado planet con el nuevo planeta seleccionado.
 
-- Configure the top-level `parserOptions` property like this:
+Renderizado: El componente renderiza un formulario con un input para ingresar los segundos y un dropdown para seleccionar el planeta. Cuando el usuario hace clic en el botón "Calculate Age", se muestra la edad calculada en el planeta seleccionado.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
