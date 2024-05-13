@@ -1,4 +1,4 @@
-AgeCalculator, calcula la edad de una persona en años según la cantidad de segundos ingresados y el planeta seleccionado. Aquí tienes una descripción de cómo funciona:
+AgeCalculator calcula la edad de una persona en años según la cantidad de segundos ingresados y el planeta seleccionado. Aquí tienes una descripción de cómo funciona:
 
 useState: Se utilizan los hooks de estado useState para manejar el estado de tres variables: seconds, planet, y age. seconds almacena la cantidad de segundos ingresados por el usuario, planet almacena el planeta seleccionado, y age almacena la edad calculada.
 
@@ -11,3 +11,4 @@ handleSecondsChange: Se activa cada vez que el usuario cambia el valor del input
 handlePlanetChange: Se activa cada vez que el usuario selecciona un planeta diferente en el dropdown. Actualiza el estado planet con el nuevo planeta seleccionado.
 
 Renderizado: El componente renderiza un formulario con un input para ingresar los segundos y un dropdown para seleccionar el planeta. Cuando el usuario hace clic en el botón "Calculate Age", se muestra la edad calculada en el planeta seleccionado.
+
